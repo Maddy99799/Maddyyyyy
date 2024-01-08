@@ -4,11 +4,12 @@
 //const tutte le variabili
 ParticleType::ParticleType(const char* name, const double mass, const int charge) : fName_((char* const)name),
                                      fMass_(mass), fCharge_(charge){}
-const char* ParticleType::getName()const {return fName_;}
-double ParticleType::getMass()const {return fMass_;}
-int ParticleType::getCharge()const {return fCharge_;}
+const char* ParticleType::GetName()const {return fName_;}
+double ParticleType::GetMass()const {return fMass_;}
+int ParticleType::GetCharge()const {return fCharge_;}
+double ParticleType::GetWidth()const {return 0;}
 void ParticleType::Print()const  {
-    std::cout<<"Particle Name:\n"<<getName()<<'\n';
-    std::cout<<"Particle Mass:\n"<<getMass()<<'\n';
-    std::cout<<"Particle Charge:\n"<<getCharge()<<'\n';
+    std::cout<<"Particle Name:\n"<<GetName()<<'\n';
+    std::cout<<"Particle Mass:\n"<<GetMass()<<'\n';
+    std::cout<<"Particle Charge:\n"<<GetCharge()<<'\n';
 }

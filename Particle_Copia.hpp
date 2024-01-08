@@ -9,8 +9,8 @@
 class Particle
 {
 public:
-    Particle(const char *name, double const fPx, double const fPy, double const fPz);
-    Particle();//
+    Particle(const char *name, double const FPx, double const FPy, double const FPz);
+    Particle();
 
     //static void ArrayPrint();
     void ParticlePrint();
@@ -20,15 +20,13 @@ public:
     double getFPz()const;
     int getfIndex() const;
 
-    double Mass(double massIndex)const;
-    double Energy(double mass, double fpx, double fpy, double fpz) const;
-    double InvMass(const ParticleType Particle, const ParticleType p) const;
+    double GetMass() const;
+    double Energy() const;
+    //double InvMass(const ParticleType Particle, const ParticleType p) const;
     
-    void SetP(double px, double py, double pz)const;
-    void SetfIndex(int index_);
+    void SetP(double px, double py, double pz);
+    void SetfIndex(int newIndex);
     void SetfIndex(const char *name);
-    //void PrintArray() const;
-    //void PrintParticle() const;
 
     //static void AddParticleType(int);
     static void AddParticle(const char* name, double mass,
@@ -36,8 +34,7 @@ public:
 
     int Decay2body(Particle &dau1, Particle &dau2) const;
     void Boost(double bx, double by, double bz);
-
-    static void PrintArray() const;
+    void PrintArray();
     void PrintParticle() const; 
 
     //void setFPx(double px);
@@ -49,12 +46,12 @@ private:
     static std::array<ParticleType *, fMaxNumParticleType> fParticleType;
     // definisco un array statico con fMNPT elementi di tipo PT, lo chiamo fPT
     static int fNParticleType; // ciclo while in cpp
-    int fIndexParticle = -1; //
+    int fIParticle = -1; 
     int fIndex;
     static int FindParticle(const char *name);
 
-    double const FPx_ = 0;
-    double const FPy_ = 0;
-    double const FPz_ = 0;
+    double fPx = 0;
+    double fPy = 0;
+    double fPz = 0;
 };
 #endif

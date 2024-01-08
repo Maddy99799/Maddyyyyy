@@ -7,7 +7,7 @@
 class ResonanceType: virtual public ParticleType{
     public:
     
-    double getWidth() const;
+    double GetWidth() const;
     void Print() const;
 
     ResonanceType(const char* name, const double mass, const int charge,
